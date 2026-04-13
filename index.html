@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Redirecting...</title>
+
+<script>
+function redirectUser() {
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    // Android detection
+    if (/android/i.test(userAgent)) {
+        window.location.href = "https://play.google.com/store/apps/details?id=com.codespirit.app";
+    }
+
+    // iOS detection
+    else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        window.location.href = "https://www.codespirit.in";
+    }
+
+    // Other devices
+    else {
+        window.location.href = "https://www.codespirit.in";
+    }
+}
+
+window.onload = redirectUser;
+</script>
+
+<style>
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    font-family:Arial, sans-serif;
+    background:#0f172a;
+    color:white;
+}
+.loader{
+    text-align:center;
+}
+</style>
+
+</head>
+
+<body>
+<div class="loader">
+    <h2>Redirecting you to CodeSpirit...</h2>
+    <p>Please wait 🚀</p>
+</div>
+</body>
+</html>
